@@ -50,10 +50,10 @@ def read_input_from_file(file_path):
         return None
 
 def main():
-    input_veids = input("Ievadi 'F' lai nolasītu inputu no faila, vai arī 'I' lai nolasītu input no klaviatūras: ").strip()
+    input_veids = input("").strip()
     
     if input_veids == 'F':
-        file_name = input("Ievadi faila nosaukumu. (Tie faila nosaukumi kuros būs burts 'a' nedarbosies: ")
+        file_name = input("")
         if 'a' in file_name:
             print("Neatbilstošs faila nosaukums")
             return
