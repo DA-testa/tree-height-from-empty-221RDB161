@@ -78,9 +78,6 @@ def main():
     else:
         print("Neatbilstošs ievades veids")
 
-if __name__ == '__main__':
-    main()
-
     # implement input form keyboard and from files
     
     # let user input file name to use, don't allow file names with letter a
