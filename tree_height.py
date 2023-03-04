@@ -50,15 +50,16 @@ def read_input_from_file(file_path):
         return None
 
 def main():
-    input_veids = input("").strip()
+    input_veids = input("Ievadi 'F' lai nolasītu inputu no faila, vai arī 'I' lai nolasītu input no klaviatūras: ").strip()
     
     if input_veids == 'F':
-        file_name = input("")
+        file_name = input("Ievadi faila nosaukumu. (Tie faila nosaukumi kuros būs burts 'a' nedarbosies: ")
+        
         if 'a' in file_name:
             print("Neatbilstošs faila nosaukums")
             return
 
-        file_path = f"/workspaces/tree-height-from-empty-221RDB161/test/{file_name}"
+        file_path = f"/workspaces/tree-height-from-empty-221RDB161/test/{file_name.zfill(2)}"
         input_lines = read_input_from_file(file_path)
         
         if input_lines:
