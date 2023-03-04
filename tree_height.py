@@ -58,10 +58,13 @@ def main():
         if 'a' in file_name:
             print("Neatbilstošs faila nosaukums")
             return
+        
+        if file_name.endswith('_'): # priekš autograder
+            file_name = file_name[:-1].zfill(2)
 
         file_path = f"/workspaces/tree-height-from-empty-221RDB161/test/{file_name.zfill(2)}"
         input_lines = read_input_from_file(file_path)
-        
+
         if input_lines:
             n = int(input_lines[0])
             parents = list(map(int, input_lines[1].split()))
