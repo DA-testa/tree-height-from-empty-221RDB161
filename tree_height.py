@@ -5,46 +5,33 @@ import sys
 import threading
 
 def compute_height(n, parents):
-
     heights = [0] * n
-
     for i in range(n):
-
         branch = i 
         augst = 0 
-
         while branch != -1:
-
-            if heights[branch] !=0:
-
+            if heights[branch] != 0:
                 augst += heights[branch]
                 break
-
             augst += 1
             branch = parents[branch]
-            j = i 
-
+        j = i 
         while j != -1:
-
             if heights[j] != 0:
                 break
-
             heights[j] = augst
             augst -= 1
             j = parents[j]
-
     return max(heights)
 
 def read_input_from_file(file_path):
     try:
-        with open(f"/workspaces/tree-height-from-empty-221RDB161/test/{file_path}", "r") as f:
+        with open(f"test/{file_path}", "r") as f:
             text = f.read().strip()
         return text.split('\n')
-
     except FileNotFoundError:
         print("Neatbilstošs faila path")
         return None
-    
     except:
         print("Kļūda nolasot failu")
         return None
@@ -63,7 +50,6 @@ def main():
             file_name = file_name[:-1].zfill(2)
 
         file_path = f"{file_name.zfill(2)}"
-        # print (file_path)
         input_lines = read_input_from_file(file_path)
 
         if input_lines:
@@ -72,12 +58,10 @@ def main():
             print(compute_height(n, parents))
         
     elif input_veids == 'I':
-
         try:
             n = int(input("Ievadi nodes skaitu: "))
             parents = list(map(int, input("Ievadiet vecāku mezglu indeksus, atdalot tos ar atstarpēm: ").split()))
             print(compute_height(n, parents)) 
-
         except:
             print("Neatbilstoša ievade")
     else:
