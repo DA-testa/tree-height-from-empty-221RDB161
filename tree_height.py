@@ -1,6 +1,6 @@
 # python3
 # 221RDB161 Linards Tomass Beķeris 10 grupa
-import os.path
+
 import sys
 import threading
 
@@ -37,7 +37,7 @@ def compute_height(n, parents):
 
 def read_input_from_file(file_path):
     try:
-        with open(os.path.join('/workspaces/tree-height-from-empty-221RDB161/test/{file_name.zfill(2)}"', file_path), "r") as f:
+        with open(f"/workspaces/tree-height-from-empty-221RDB161/test/{file_path}", "r") as f:
             text = f.read().strip()
         return text.split('\n')
 
@@ -62,7 +62,7 @@ def main():
         if file_name.endswith('_'): # priekš autograder
             file_name = file_name[:-1].zfill(2)
 
-        file_path = f"/workspaces/tree-height-from-empty-221RDB161/test/{file_name.zfill(2)}"
+        file_path = f"{file_name.zfill(2)}"
         # print (file_path)
         input_lines = read_input_from_file(file_path)
 
