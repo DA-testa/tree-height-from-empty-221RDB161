@@ -62,7 +62,7 @@ def main():
         if file_name.endswith('_'): # priekš autograder
             file_name = file_name[:-1].zfill(2)
 
-        file_path = f"/autograder/submission/{file_name.zfill(2)}"
+        file_path = f"/workspaces/tree-height-from-empty-221RDB161/test/"+ file_name.zfill(2)
         input_lines = read_input_from_file(file_path)
 
         if input_lines:
@@ -81,22 +81,7 @@ def main():
             print("Neatbilstoša ievade")
     else:
         print("Neatbilstošs ievades veids")
-if __name__ == '__main__':
-    main()
 
-    # implement input form keyboard and from files
-    
-    # let user input file name to use, don't allow file names with letter a
-    # account for github input inprecision
-    
-    # input number of elements
-    # input values in one variable, separate with space, split these values in an array
-    # call the function and output it's result
-
-
-# In Python, the default limit on recursion depth is rather low,
-# so raise it here for this problem. Note that to take advantage
-# of bigger stack, we have to launch the computation in a new thread.
-sys.setrecursionlimit(10**7)  # max depth of recursion
-threading.stack_size(2**27)   # new thread will get stack of such size
+sys.setrecursionlimit(10**7)  
+threading.stack_size(2**27)   
 threading.Thread(target=main).start()
